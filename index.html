@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="http://www.taobao.com"> -->
+</head>
+<body>
+   <!-- hello -->
+   
+   <!-- 3. 
+   <img src="http://www.baidu.com"> -->
+   <!-- <script>
+    //    发送网络请求
+       // 1. 在浏览器中直接输入网址
+       // 2. location.href="url", 可以发出网络请求，但是页面会发生跳转
+       // 3. 带有src属性的标签。 请求是可以发出的，服务端是可以处理的也是可以返回的。 但是返回之后，能否被应用，还要看浏览器
+       // 4. 带有href属性的标签。请求是可以发出的服务端是可以处理的也是可以返回的。 但是返回之后，能否被应用，还要看浏览器
+       //  希望有一种方式，可以用代码控制，页面不会跳转，服务端返回结果我可以继续用js继续处理
+
+         // ajax
+         //  要素
+         // (1) 请求方式 ， get , post
+         // (2) url
+
+         var xhr = null;
+         if(window.XMLHttpRequest) {
+             xhr = new XMLHttpRequest();
+         } else {
+            xhr = new ActiveXObject("Microsoft.XMLHttp");
+         }
+         xhr.open("get", "http://developer.duyiedu.com/edu/testAjaxCrossOrigin");
+         xhr.send();
+    
+   </script> -->
+    <!-- <div id="test"></div>
+    <script>
+        var xhr = null;
+        if(window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        }else {
+            xhr = new ActiveXObject("Microsoft.XMLHttp");
+        }
+        xhr.open("get", "http://developer.duyiedu.com/edu/testAjaxCrossOrigin", true);
+        // 如果open第三个参数传true，或者不传，为异步模式。如果传false，为同步模式
+        xhr.onreadystatechange = function () {
+            // readyState == 4的时候表示请求已完成， 已经接收到数据
+            // console.log(xhr.readyState)
+            // status == 200  网络请求， 结果都会有一个状态码。来表示这个请求是否正常
+            // 200表示成功
+
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                // alert(xhr.responseText);
+                document.getElementById('test').innerText = xhr.readyState;
+                var data = JSON.parse(xhr.responseText);
+                console.log(data);
+            }
+        }
+        xhr.send();   //  请求发送
+        console.log("111")
+    </script> -->
+  
+    <script>
+        function asd(data) {
+            console.log(data)
+        }
+    </script>
+    <script src="http://developer.duyiedu.com/edu/testJsonp?callback=asd"></script>
+
+</body>
+</html>
